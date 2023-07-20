@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<form action="/questions/0">
+    <label for="survey">Select survery to participate in</label>
+    <select name="survey" id="survey">
+        {% for opt in options %}
+        <option value="{{opt}}">{{opt}}</option>
+        {% endfor %}
+    </select>
+    <button>Select</button>
+</form>
+{% endblock%}

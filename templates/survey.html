@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<form action="/answers">
+    <label for="survey">{{instr}}</label>
+    {%if question%}
+    <select name="ans" id="ans">
+        {% for choice in choices %}
+        <option value="{{choice}}">{{choice}}</option>
+        {% endfor %}
+    </select>
+    {%endif%}
+    <input name="survey" value="{{survey}}" hidden="true">
+    {%if not finished%}<button>{{button_text}}</button>{%endif%}
+</form>
+{% endblock%}
+{% for msg in get_flashed_messages() %}
+  <p>{{ msg }}</p>
+{% endfor %}
