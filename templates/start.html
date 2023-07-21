@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<form action="/questions/0">
+<form action="/init">
     <label for="survey">Select survery to participate in</label>
     <select name="survey" id="survey">
         {% for opt in options %}
